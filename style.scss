@@ -1,0 +1,248 @@
+$DarkGray: hsl(0, 0%, 63%);
+$Black: hsl(0, 0%, 0%);
+$White: hsl(0, 0%, 100%);
+$VeryDarkGray: hsl(0, 0%, 27%);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'League Spartan', sans-serif;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    .slider{
+        height: 70vh;
+        position: relative;
+        display: flex;
+        .slide{
+            display: flex;
+            .banner-desktop{
+                max-width: 100%;
+                object-fit: cover;
+            }
+            .banner-mobile{
+                display: none;
+                max-width: 100%;
+                object-fit: cover;
+            }
+            .banner-mobile{
+                max-width: 100%;
+                object-fit: cover;
+                
+            }
+            .info{
+                margin-top: 1.5rem;
+                padding: 6rem 5.5rem 6rem 6rem;
+                position: relative;
+                h1{
+                    font-size: 44px;
+                    font-weight: 600;
+                }
+                p{
+                    font-size: 16px;
+                    color: $DarkGray;
+                    font-weight: 500;
+                    line-height: 1.4rem;
+                    margin: 1.5rem 0rem;
+                }
+                .shop-now{
+                    font-size: 18px;
+                    letter-spacing: 1rem;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    img{
+                        width: 10%;
+                    }
+                }
+                
+                
+            }
+        }
+        .slide-2{
+            display: none;
+        }
+        .slide-3{
+            display: none;
+        }
+        .option{
+            width: 150px;
+            position: absolute;
+            bottom: 0;
+            left: 58.3%;
+            display: flex;
+            align-items: center;
+            .prev{
+                width: 50%;
+                height: 70px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                background-color: black;
+            }
+            .prev:hover{
+                background-color: $VeryDarkGray;
+            }
+            .next{
+                width: 50%;
+                height: 70px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                background-color: black;
+            }
+            .next:hover{
+                background-color: $VeryDarkGray;
+            }
+        }
+        .menu{
+            position: absolute;
+            top: 4rem;
+            left: 4rem;
+            display: flex;
+            gap: 4rem;
+            .logo{
+                cursor: pointer;
+            }
+            .hamburger{
+                display: none;
+            }
+            .menu-wrapper{
+                .close{
+                    display: none;
+                }
+                ul{
+                    cursor: pointer;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    display: flex;
+                    gap: 2rem;
+                    text-transform: lowercase;
+                    color: white;
+                }
+            }
+            
+        }
+        
+    }
+    .bottom{
+        height: 34vh;
+        display: flex;
+        .about{
+            margin-top: 2.5rem;
+            padding: 3.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            h1{
+                font-size: 18px;
+                text-transform: uppercase;
+                letter-spacing: 0.4rem;
+            }
+            p{
+                font-size: 16px;
+                color: $DarkGray;
+                font-weight: 500;
+                line-height: 1.4rem;
+                margin: 1rem 0rem;
+            }
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    .container{
+        overflow-x: hidden;
+        .slider{
+            flex-direction: column;
+            height:auto;
+            .slide{
+                flex-direction: column;
+                .banner-mobile{
+                    margin-top: -20px;
+                    display: flex;
+                }
+                .banner-desktop{
+                    display: none;
+                }
+                .info{
+                    padding: 3rem 2rem;
+                    h1{
+                        font-size: 34px;
+                    }
+                    
+                }
+            }
+            .option{
+                position: absolute;
+                top: 0;
+                left: unset;
+                right: 0;
+                bottom: 100px;
+            }
+            .slide-2{
+                display: none;
+            }
+            .slide-3{
+                display: none;
+            }
+            .menu{
+                top: 4rem;
+                left: 2rem;
+                position: relative;
+
+                .logo{
+                    position: absolute;
+                    display: flex;
+                    margin-left: 36%;
+                      
+                }
+                .hamburger{
+                    display: block;
+                    
+                }
+                .menu-wrapper{
+                    display: none;
+                    position: absolute;
+                    width: 100%;
+                    height: 100px;
+                    background-color: white;
+                    top: -65px;
+                    left: -32px;
+                    
+                    gap: 3rem;
+                    .close{
+                        display: block;
+                    }
+                    ul{
+                        color: black;
+                    }
+                }
+                .active{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                }
+               
+            }
+            
+            
+    
+        }
+        .bottom{
+            flex-direction: column;
+            .about{
+                padding: 2rem;
+            }
+        }
+    }
+}
